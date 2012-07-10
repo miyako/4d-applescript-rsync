@@ -1,0 +1,4 @@
+"rsyncSuccessMessage" = "rsync was successfully launched as a daemon.";
+"rsyncAlertMessage" = "rsync is already running on this machine.";
+"quitButtonLabel" = "Quit";
+"cancelButtonLabel" = "Cancel";

@@ -1,0 +1,2 @@
+"rsyncFailureMessage" = "rsync could not connect to the remote server.";
+"startFailureMessage" = "no application was copied to the local disk.";

@@ -1,0 +1,64 @@
+This is a simple AppleScript based solution which illustates how the UNIX command 'rsync' can be used to sync your 4D application and database.
+
+Mac Only.
+
+
+Quick Guide
+
+1. On your "server" computer
+
+
+Install "RSYNC SERVER".
+Right click the package and navigate to Contents/Resources/Share.
+Copy your application, i.e. 4D.app or 4D Server.app to the "4D" folder.
+Copy your database, i.e. DB.4dbase to the "DB" folder. 
+
+That's it!!!
+
+Now, double click RSYNC SERVER.
+
+You will be required to enter your administrator password to start rsync as a daemon.
+
+2. On your "remote" computer
+
+
+Install "RSYNC CLIENT".
+Right click the package and navigate to Contents/Info.plist.
+Open with property list editor (if installed) or a text editor.
+Make sure the propery key "rsyncServerAddress" corresponds to your server machine.
+Make sure the propery key "rsyncAppPath" corresponds to your application path, relative to the "SHARE" directory on the server machine.
+Make sure the propery key "rsyncFilePath" corresponds to your document path, relative to the "SHARE" directory on the server machine.
+The document should normally be a structure file.
+4DLink file might work too. (not tested)
+
+Default values are;
+
+rsyncServerAddress = 127.0.0.1
+rsyncAppPath = 4D/4D.app
+rsyncFilePath = DB/DB.4dbase/DB.4DB
+
+Note: You should not escape special characters or spaces.
+
+That's it!!!
+
+Now, double click RSYNC CLIENT.
+
+The application and database will be copied to the local disk from the server.
+The application will start with the specified document.
+Note that the data file is excluded from sync.
+This is to prevent rsync from over writing the local data.
+
+As such, on the first instance, you will be prompted to select a data file or create a new one.
+
+If the application or databased needs to be updated, simply update the SHARE folder on the server. 
+Each client should receive the latest copy before the next launch.
+
+If a problem occurs during rsync on the client side, the last local copy will be used.
+
+Note: the application and data exist inside the application support folder in the user domain.
+
+HTH
+
+miyako 
+
+
