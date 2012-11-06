@@ -28,12 +28,15 @@ Open with property list editor (if installed) or a text editor.
 Make sure the propery key "rsyncServerAddress" corresponds to your server machine.
 Make sure the propery key "rsyncAppPath" corresponds to your application path, relative to the "SHARE" directory on the server machine.
 Make sure the propery key "rsyncFilePath" corresponds to your document path, relative to the "SHARE" directory on the server machine.
+Make sure the propery key "rsyncModuleName" corresponds to the same property on the server side.
+
 The document should normally be a structure file.
 4DLink file might work too. (not tested)
 
 Default values are;
 
 rsyncServerAddress = 127.0.0.1
+rsyncModuleName = 4D
 rsyncAppPath = 4D/4D.app
 rsyncFilePath = DB/DB.4dbase/DB.4DB
 
